@@ -41,7 +41,7 @@
         <div class="introHeader">
             <h1>Welcome to the Blinds Website</h1>
 
-            <p>Here you can buy your blinds.</p>
+            <p>Whatever your looking for, gurantee we'll have it at the best price.</p>
         </div>
 
     </section>
@@ -114,16 +114,21 @@
                    Newsletter
                </h4>
                <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.
+                For more updates on new products, recommendations and promotions kindly subscribe to our newsletter.
                </p>
             </div>
+            
+            <form method="post" action="/email_subscribers">
+                <div class="input-field col s6">
+                    <input placeholder="Placeholder" id="email" name="email" type="text" class="validate">
+                    <label for="email">Email Address</label>
+                  </div>
+            
+                  <div class="input-field col s6">
+                      <input type="submit" value="submit" id="add_email_address" class="waves-effect waves-light btn">
+                  </div>
+            </form>
 
-            <div class="emailSection col s6">
-                <input id="email_address" class="emailInput" type="text" placeholder="Email Address">
-                <a class="waves-effect waves-light btn">Subscribe</a>
-            </div>
-
-          </div>
     </section>
 
 
