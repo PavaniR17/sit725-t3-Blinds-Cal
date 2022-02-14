@@ -21,7 +21,7 @@ function calc() {
     }
     one = document.SumForm.firstBox.value;
     two = document.SumForm.secondBox.value;
-    document.SumForm.result.value = (one * two * valueModifier).toFixed(2);
+    document.SumForm.result.value = ((one * two * valueModifier)/100).toFixed(2);
 }
 function stopCalc() {
     clearInterval(interval);
