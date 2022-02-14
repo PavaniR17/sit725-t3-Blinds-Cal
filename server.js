@@ -6,6 +6,7 @@ let io = require('socket.io')(http);
 let path = require('path')
 const mongoose = require('mongoose')
 const mongoURL = 'mongodb+srv://praavi:Sripa2709@cluster0.cnrl8.mongodb.net/Blinds-Calc?retryWrites=true&w=majority'
+
 app.listen(5050, function() {
    console.log('Listening on port 5050');
 });
@@ -17,6 +18,7 @@ mongoose.connect(mongoURL, {useNewUrlParser: true, useUnifiedTopology: true })
 //Change the './' to point to the root of your angular app
 //app.use(express.static(path.resolve('./public')));
 //app.use(express.static('/sit725-t3-Blinds-Cal'));
+
 
 //app.use(express.static('../build'));
 const sit725_collection = mongoose.model('Blinds-Calc', 
@@ -37,6 +39,8 @@ app.get('/api', async(req, res) => {
       })
   }
 })
+
+
 //app.get('*', (req, res)=> {
  // const index = path.join(__dirname, '/', '../build', 'index.html' );
   //res.sendFile(index);
