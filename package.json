@@ -7,22 +7,23 @@
     "http-post": "^0.1.1",
     "http-proxy": "^1.18.1",
     "mongodb": "^4.3.1",
+    "mongoose": "^6.2.1",
     "script": "^0.1.4",
     "socket.io": "^4.4.1",
+    "socket.io-client": "^4.4.1",
     "start": "^5.1.0",
     "uuid": "^8.3.2"
   },
   "main": "server.js",
-
   "scripts": {
-    "start": "set PORT= 5050 && set name=pavani && node server.js" ,
+    "start": "set PORT= 5050 && set name=pavani && node server.js",
     "start-dev": "nodemon server.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/IBM-Bluemix/bluemix-hello-node.git" 
-   },
-   "dev-Dependencies": {
-     "nodemon":"^2.0.15"
-   }
+    "url": "https://github.com/IBM-Bluemix/bluemix-hello-node.git"
+  },
+  "dev-Dependencies": {
+    "nodemon": "^2.0.15"
+  }
 }
