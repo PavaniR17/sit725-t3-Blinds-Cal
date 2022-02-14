@@ -49,7 +49,6 @@ app.post("/email_subscribers", function (request, response){
     
   }
     
-
   let email = request.body.email;
   console.log(dbo);
   let db = dbo.getDB();
@@ -72,6 +71,16 @@ app.post("/email_subscribers", function (request, response){
     // response.sendStatus(204);
 });
 
+app.post("/unsubscribe/:email", function(request, response) {
+  let email = request.params.email;
+  console.log(email);
+  let query = {"email": email};
+  let db = dbo.getDB();
+
+  db.collection('email_subscribers').deleteMany(query);
+
+  // response.send('Unsubscribed');
+});
 
 //socket test
 io.on('connection', (socket) => {
