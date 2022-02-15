@@ -9,7 +9,6 @@ let dbo = require('./database/conn');
 
 
 
-
 var port = process.env.PORT || 8080;
 
 app.use(express.static(__dirname + '/public'));
@@ -79,7 +78,30 @@ app.post("/unsubscribe/:email", function(request, response) {
 
   db.collection('email_subscribers').deleteMany(query);
 
-  // response.send('Unsubscribed');
+  response.send('Unsubscribed');
+});
+
+app.get('/login', function(request, response) {
+  response.redirect('/login.html');
+});
+
+app.post('/login', function(request, response) {
+  let username = request.body.username;
+  let password = request.body.password;
+
+  let db = dbo.getDB();
+  let query = {"username": username, "password": password};
+  db.collection("admins").findOne(query, function(err, doc) {
+    if (err) {
+      console.log(err);
+    }
+    if (doc) {
+      response.redirect("/");
+    } else {
+      response.send('Wrong username or password');
+    }
+  });
+  
 });
 
 //socket test

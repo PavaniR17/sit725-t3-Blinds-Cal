@@ -16,26 +16,26 @@ const loginButton = document.getElementById("login-form-submit");
 const loginErrorMsg = document.getElementById("login-error-msg");
 
 
-loginButton.addEventListener("click", (e) => {
-  e.preventDefault();
-  const username = loginForm.username.value;
-  const password = loginForm.password.value;
+// loginButton.addEventListener("click", (e) => {
+//   e.preventDefault();
+//   const username = loginForm.username.value;
+//   const password = loginForm.password.value;
 
 
-  if (username === "admin" && password === "blinds") {
+//   if (username === "admin" && password === "blinds") {
 
-    redirectUser();
+//     redirectUser();
 
-  } else {
+//   } else {
 
-      loginErrorMsg.style.display = "block";
+//       loginErrorMsg.style.display = "block";
 
-  }
+//   }
 
-});
+// });
 
-function redirectUser(){
+// function redirectUser(){
 
-  window.location.assign("http://127.0.0.1:5500/index.html");
+//   window.location.assign("http://127.0.0.1:5500/index.html");
 
-}
+// }
