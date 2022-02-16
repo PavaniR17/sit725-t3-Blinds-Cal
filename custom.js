@@ -72,6 +72,39 @@ M.AutoInit();
 });
 
 
+// this is to insert new range
+
+const form = document.querySelector('form');
+const inputFile = document.querySelector('input[type=file]');
+let imgFile
+inputFile.addEventListener('change',(e) => {
+  imgFile = e.target.files[0]
+})
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const range = e.target.range.value.trim();
+  const cost = e.target.cost.value.trim();
+  const description = e.target.description.value.trim();
+  const formdata = new FormData();
+
+  formdata.append('image', imgFile);
+  formdata.append('range', range)
+  formdata.append('cost', cost)
+  formdata.append('description', description)
+
+  fetch('/api', {
+    method: 'POST',
+    body: formdata
+  })
+  .then(res=> res.json())
+  .then(res => {
+    if (res.acknowledged) {
+      location.reload()
+    }
+  })
+  .catch(error => console.log(error))
+})
+
 
 
   

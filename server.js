@@ -3,7 +3,10 @@ let app = express();
 
 let http = require('http').createServer(app);
 let io = require('socket.io')(http);
-let path = require('path')
+
+const path = require('path')
+const fs = require('fs')
+const formidable = require('formidable');
 const mongoose = require('mongoose');
 const res = require('express/lib/response');
 const req = require('express/lib/request');
@@ -33,6 +36,33 @@ app.get('/api', async(req, res) => {
     const ranges = await sit725_collection.find({});
     res.status(200)
       .json(ranges)
+  } catch (error) {
+    res.status(500)
+      .json({
+        status:'Fail',
+        message: error,
+      })
+  }
+})
+
+app.post('/api', (req, res) => {
+  try {
+    form = new formidable.IncomingForm();
+    form.parse(req, async (err, {range, cost, description}, {image}) =>{
+      
+      const newpath = 'img/ranges_img/'+ image.originalFilename;
+      fs.renameSync(image.filepath, 'sit725-t3-Blinds-Cal/'+newpath)
+
+      const item = await sit725_collection.collection.insertOne({
+        name:range,
+        cost,
+        description,
+        img_url: newpath
+      })
+        res.status(201)
+          .json(item)
+      });
+  
   } catch (error) {
     res.status(500)
       .json({
