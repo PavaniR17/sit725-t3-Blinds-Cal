@@ -4,7 +4,9 @@ let app = express();
 let http = require('http').createServer(app);
 let io = require('socket.io')(http);
 let path = require('path')
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
+const res = require('express/lib/response');
+const req = require('express/lib/request');
 const mongoURL = 'mongodb+srv://praavi:Sripa2709@cluster0.cnrl8.mongodb.net/Blinds-Calc?retryWrites=true&w=majority'
 
 app.listen(5050, function() {
@@ -39,8 +41,6 @@ app.get('/api', async(req, res) => {
       })
   }
 })
-
-
 //app.get('*', (req, res)=> {
  // const index = path.join(__dirname, '/', '../build', 'index.html' );
   //res.sendFile(index);
