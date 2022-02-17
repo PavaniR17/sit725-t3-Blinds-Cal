@@ -1,0 +1,94 @@
+.nav-wrapper{
+    margin: 0 auto;
+    width: 90%;
+}
+
+.introHeader, .buttonSection
+{
+    text-align: center;
+}
+
+.introSection, .mostViewedSection{
+    padding: 10px;
+}
+
+.introSection .introHeader h1{
+    color: white;
+}
+
+.introSection .introHeader p{
+    font-size: 21px;
+    color: white;
+}
+
+.slider-height{
+    height: 340px;
+}
+
+.mostViewedSection .buttonSection{
+    margin-bottom: 40px;
+}
+
+.recommendationsSection {
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgb(117 117 117 / 25%);
+}
+
+.newsletterSection{
+    border-bottom: 1px solid #757575;
+}
+
+.recommendationsSection .carousel .carousel-item .carousel-text p{
+    font-weight: bold;
+}
+.newsletterRow{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.newsletterText{
+    width: 53%;
+    margin-right: 0%;
+    float: left;
+}
+
+.emailSection {
+    width: 43%;
+    float: left;
+    margin-top: 4%;
+}
+
+#email_address{
+    width: 70%;
+}
+
+footer a, footer h5{
+    color: #fff;
+}
+
+.copyrightSection{
+    margin-bottom: 0px;
+}
+
+.copyrightSection .copyright p{
+    text-align: center;
+    color: #fff;
+}
+
+
+.loader {
+    position: absolute;
+    top: 50vh;
+    left: 50%;
+    border: 16px solid #f3f3f3; 
+    border-top: 16px solid #3498db; 
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
