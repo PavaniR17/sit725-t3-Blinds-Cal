@@ -1,4 +1,4 @@
-const { Mongoose } = require("mongoose");
+//const { Mongoose } = require("mongoose");
 M.AutoInit();
  
  document.addEventListener('DOMContentLoaded', function() {
@@ -15,14 +15,14 @@ M.AutoInit();
 
   if(location.pathname.indexOf('/ranges.html') > -1){
 
-    const loader = document.querySelector('#loader');
-    loader.classList.add('loader')
+   // const loader = document.querySelector('#loader');
+    //loader.classList.add('loader')
     fetch('/api')
     .then(res=> res.json())
     .then(data => {
-      loader.classList.remove('loader')
+     // loader.classList.remove('loader')
       let html = ''
-
+      
       data.forEach(({name, img_url, description}) => {
         html += `
         <div class="col s10 m7 l4">
@@ -42,7 +42,7 @@ M.AutoInit();
         `
       })
 
-      document.querySelector('.row').innerHTML = html;
+      document.querySelector('#allRanges').innerHTML = html;
     })
     .catch(error=>{
       loader.classList.remove('loader')

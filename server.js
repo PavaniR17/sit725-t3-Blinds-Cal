@@ -39,6 +39,7 @@ app.use(express.urlencoded({ extended: false }));
 app.get('/api', async (req, res) => {
   try {
     const ranges = await sit725_collection.find({});
+    
     res.status(200)
       .json(ranges)
   } catch (error) {
@@ -83,7 +84,7 @@ app.post('/api', (req, res) => {
     form.parse(req, async (err, { range, cost, description }, { image }) => {
 
       const newpath = 'img/ranges_img/' + image.originalFilename;
-      fs.renameSync(image.filepath, 'sit725-t3-Blinds-Cal/' + newpath)
+      //fs.renameSync(image.filepath, 'sit725-t3-Blinds-Cal/' + newpath)
 
       const item = await sit725_collection.collection.insertOne({
         name: range,
