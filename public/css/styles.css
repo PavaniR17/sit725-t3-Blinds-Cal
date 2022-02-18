@@ -1,0 +1,52 @@
+@font-face {
+    font-family: Garamond;
+    src: url("../fonts/garamond.woff");
+}
+
+@font-face {
+    font-family: Helvetica;
+    src: url("../fonts/helvetica.ttf");
+}
+
+* {
+    font-family: Helvetica;
+}
+
+p, .btn {
+    font-family: Garamond;
+}
+
+nav {
+    height: 10vh;
+    background-color: rgba(255, 255, 255, 0);
+}
+header {
+    height: 100vh;
+    background-image: url("../img/blinds.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.introSection {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.introSection .introHeader h1, .introSection .introHeader p, h2 {
+    color: rgb(55, 70, 80);
+}
+
+.introSection .introHeader h1 {
+    font-weight: bold;
+}
+
+.introSection .introHeader p {
+    font-family: Garamond;
+    font-weight: bold;
+}
+
+.btn {
+    color: rgb(55, 70, 80);
+}

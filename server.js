@@ -114,7 +114,7 @@ app.post('/login', function(request, response) {
       console.log(err);
     }
     if (doc) {
-      response.redirect("/");
+      response.redirect("/ranges.html");
     } else {
       response.send('Wrong username or password');
     }
